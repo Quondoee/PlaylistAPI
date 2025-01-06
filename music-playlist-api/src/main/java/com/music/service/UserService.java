@@ -19,9 +19,9 @@ public class UserService {
         this.userRepository = userRepository;
     }
 
-    public List<User> searchUsers(String keyword) {
-        // Search by name or email, or both
-        return userRepository.findByNameContainingIgnoreCaseOrEmailContainingIgnoreCase(keyword, keyword);
+    public List<User> searchUsers(String name , String email) {
+
+        return userRepository.findByNameContainingIgnoreCaseOrEmailContainingIgnoreCase(name, email);
     }
 
     public User createUser(User user) {
